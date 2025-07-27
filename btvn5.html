@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+    <style>
+    .board {
+      display: grid;
+      grid-template-columns: repeat(8, 60px);
+      grid-template-rows: repeat(8, 60px);
+      width: 480px;
+      height: 480px;
+      border: 2px solid #4f4b5d;
+    }
+
+    .square {
+      width: 60px;
+      height: 60px;
+    }
+
+    /* Màu xen kẽ trắng đen */
+    .square0 {
+      background-color: #ffffff;
+    }
+
+    .square1 {
+      background-color: #000000;
+    }
+   </style>
+<body>
+
+<h2>Bàn cờ vua</h2>
+
+<div class="board">
+  <!-- Hàng 1 -->
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+
+  <!-- Hàng 2 -->
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+
+  <!-- Hàng 3 -->
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+
+  <!-- Hàng 4 -->
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+
+  <!-- Hàng 5 -->
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+
+  <!-- Hàng 6 -->
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+
+  <!-- Hàng 7 -->
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+  <div class="square0"></div><div class="square1"></div><div class="square0"></div><div class="square1"></div>
+
+  <!-- Hàng 8 -->
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+  <div class="square1"></div><div class="square0"></div><div class="square1"></div><div class="square0"></div>
+</div>
+
+</body>
+</html>
