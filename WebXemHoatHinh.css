@@ -1,0 +1,25 @@
+ body{
+    font-family: Arial, sans-serif;
+ }
+ div{
+    display: inline-block;
+ }
+video {
+    display: block;
+    margin: 100px 100px 10px 100px;
+
+}
+h2{
+    padding-left: 100px;
+}
+h3 {
+    font-size: 20px;
+    margin-left: 100px;
+    color: #555;
+    border-radius: 7px;
+    border: 1px solid #ccc;
+}
+h3:hover {
+    color: #bisque;
+    background-color: #f0f0f0;
+}
