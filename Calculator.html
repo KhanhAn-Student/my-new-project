@@ -1,0 +1,81 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng máy tính</title>
+</head>
+<style>
+    .container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2> Ứng dụng máy tính đơn giản</h2>
+
+        <label>Số thứ nhất: </label>
+        <input type="number" id="num1" placeholder="Nhập số thứ nhất"><br><br>
+
+        <label>Số thứ hai: </label>
+        <input type="number" id="num2" placeholder="Nhập số thứ hai"><br><br>
+
+        <label>Phép toán: </label>
+        <select id="operator">
+            <option value="+">Cộng (+)</option>
+            <option value="-">Trừ (-)</option>
+            <option value="*">Nhân (×)</option>
+            <option value="/">Chia (÷)</option>
+        </select>
+
+        <button onclick="calculate()">Tính</button>
+
+        <h3>Kết quả: <span id="result">---</span></h3>
+
+        <script>
+            function calculate() {
+                let a = document.getElementById("num1").value;
+                let b = document.getElementById("num2").value;
+                let op = document.getElementById("operator").value;
+
+                // Kiểm tra nhập liệu
+                if (a === "" || b === "") {
+                    alert(" Vui lòng nhập đầy đủ hai số!");
+                    return;
+                }
+
+                a = parseFloat(a);
+                b = parseFloat(b);
+                let result = 0;
+
+                if (op === "+") {
+                    result = a + b;
+                }
+                else if (op === "-") {
+                    result = a - b;
+                }
+                else if (op === "*") {
+                    result = a * b;
+                }
+                else if (op === "/") {
+                    if (b === 0) {
+                        alert(" Không thể chia cho 0!");
+                        return;
+                    }
+                    result = a / b;
+                }
+
+                document.getElementById("result").innerText = result;
+            }
+        </script>
+    </div>
+
+</body>
+
+</html>

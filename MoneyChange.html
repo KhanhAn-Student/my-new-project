@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="vi">
+
+<head>
+    <meta charset="UTF-8">
+    <title>Ứng dụng chuyển đổi tiền tệ</title>
+</head>
+<style>
+    .container {
+        width: 300px;
+        margin: 0 auto;
+        padding: 20px;
+        border: 1px solid #ccc;
+        border-radius: 5px;
+        background-color: #f9f9f9;
+    }
+</style>
+
+<body>
+    <div class="container">
+        <h2> Ứng dụng chuyển đổi tiền tệ</h2>
+
+        <label>Số tiền: </label>
+        <input type="number" id="amount" placeholder="Nhập số tiền"><br><br>
+
+        <label>Từ: </label>
+        <select id="from">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            <option value="JPY">JPY</option>
+        </select>
+
+        <label>→ Sang: </label>
+        <select id="to">
+            <option value="VND">VND</option>
+            <option value="USD">USD</option>
+            <option value="JPY">JPY</option>
+        </select>
+
+        <button onclick="convert()">Chuyển đổi</button>
+
+        <h3>Kết quả: <span id="result">---</span></h3>
+
+        <script>
+            function convert() {
+                let amount = document.getElementById("amount").value;
+                let from = document.getElementById("from").value;
+                let to = document.getElementById("to").value;
+
+                // Nếu chưa nhập số tiền thì nhắc nhở và dừng
+                if (amount === "" || isNaN(amount) || parseFloat(amount) <= 0) {
+                    alert(" Vui lòng nhập số tiền hợp lệ!");
+                    return;
+                }
+
+                amount = parseFloat(amount);
+                let result = 0;
+
+                // Tỉ giá giả định
+                let usdToVnd = 25000;
+                let usdToJpy = 150;
+
+                if (from === to) {
+                    result = amount; // cùng loại tiền
+                }
+                else if (from === "USD" && to === "VND") {
+                    result = amount * usdToVnd;
+                }
+                else if (from === "VND" && to === "USD") {
+                    result = amount / usdToVnd;
+                }
+                else if (from === "USD" && to === "JPY") {
+                    result = amount * usdToJpy;
+                }
+                else if (from === "JPY" && to === "USD") {
+                    result = amount / usdToJpy;
+                }
+                else if (from === "VND" && to === "JPY") {
+                    result = (amount / usdToVnd) * usdToJpy;
+                }
+                else if (from === "JPY" && to === "VND") {
+                    result = (amount / usdToJpy) * usdToVnd;
+                }
+
+                // Hiển thị kết quả
+                document.getElementById("result").innerText = result.toFixed(2) + " " + to;
+            }
+        </script>
+
+    </div>
+</body>
+
+</html>
