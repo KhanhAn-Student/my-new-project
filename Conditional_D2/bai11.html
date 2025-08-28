@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a =parseFloat(prompt("Nhập tổng mức thu nhập 1 tháng: "))
+        let total =0;
+        let x = parseFloat(prompt("Nhập số người phụ thuộc: "));
+        let y = parseFloat(prompt("Nhập số tiền giảm trừ bản thân: "));
+        if( a<0 || x<0 || y <0){
+            document.write("Thông tin nhập vào không hợp lệ.");
+        }else if(a <=1000000){
+            document.write("Bạn không phải nộp thuế thu nhập cá nhân.");
+        }
+        else if( a>1000000){
+            document.write("Bạn phải nộp thuế thu nhập cá nhân.");
+            total = a - 1000000 - (x * 4400000) - y;
+            if(total <= 0){
+                document.write("Số tiền thu nhập tính thuế không hợp lệ.");
+            }else if(total <= 5000000){
+                let tax = total * 0.05; 
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+            }else if(total <= 10000000){
+                let tax = total * 0.1; 
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+            }else if(total <= 18000000){
+                let tax = total * 0.15; 
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+            }else if(total <= 32000000){
+                let tax = total * 0.2;
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+            }else if(total <= 52000000){
+                let tax = total * 0.25;
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+            }else if(total <= 80000000){
+                let tax = total * 0.3;
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+            }else{
+                let tax = total * 0.35; 
+                document.write("Số tiền thu nhập tính thuế: " + total.toLocaleString() + " đồng.<br>");
+                document.write("Số thuế thu nhập cá nhân phải nộp: " + tax.toLocaleString() + " đồng.");
+        }
+    }
+    </script>
+</body>
+</html>

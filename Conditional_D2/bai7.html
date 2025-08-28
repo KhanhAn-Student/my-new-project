@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseFloat(prompt("Nhập a:"));
+        let b = parseFloat(prompt("Nhập b:"));
+        let c = parseFloat(prompt("Nhập c:"));
+        let result = "";
+
+        if (a === 0) {
+            // Giải phương trình bậc nhất bx + c = 0
+            if (b === 0) {
+                result = (c === 0) ? "Phương trình có vô số nghiệm." : "Phương trình vô nghiệm.";
+            } else {
+                let x = -c / b;
+                result = `Phương trình có nghiệm: x = ${x}.`;
+            }
+        } else {
+            let delta = b * b - 4 * a * c;
+            if (delta < 0) {
+                result = "Phương trình vô nghiệm.";
+            } else if (delta === 0) {
+                let x = -b / (2 * a);
+                result = `Phương trình có nghiệm kép: x = ${x}.`;
+            } else {
+                let x1 = (-b + Math.sqrt(delta)) / (2 * a);
+                let x2 = (-b - Math.sqrt(delta)) / (2 * a);
+                result = `Phương trình có 2 nghiệm phân biệt: x₁ = ${x1}, x₂ = ${x2}.`;
+            }
+        }
+        document.write(result);
+    </script>
+</body> 
+</html>

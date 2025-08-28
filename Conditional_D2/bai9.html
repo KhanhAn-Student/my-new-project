@@ -1,0 +1,20 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a= parseFloat(prompt("Nhập cạnh 1 của hình chữ nhât:"));
+        let b = parseFloat(prompt("Nhập cạnh 2 của hình chữ nhật:"));
+        let c = parseFloat(prompt("Nhập cạnh 3 của hình chữ nhật:"));
+        if(a >0 && b>0 && c>0|| a+b>c && a+c>b && b+c>a) {
+            document.write("Đây là hình chữ nhật.");
+        } else {
+            document.write("Đây không phải là hình chữ nhật.");
+        }
+    </script>
+</body>
+</html>

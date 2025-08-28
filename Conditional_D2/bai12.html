@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let P = parseFloat(prompt("Nhập số tiền ban đầu: "));
+        let r = parseFloat(prompt("Nhập lãi suất hàng tháng(%): "));
+        let n = parseInt(prompt("Nhập số thời gian gửi (tháng): "));
+        if ( P<0|| r<0 || n<0){
+            document.write("Thông tin nhập vào không hợp lệ. Vui lòng nhập lại.");
+        } else {
+            let S = P * Math.pow((1 + r / 100), n);
+            document.write("Số tiền sau " + n + " tháng là: " + Math.round(S).toLocaleString('vi-VN') + " đồng.");
+        }
+    </script>
+</body>
+</html>

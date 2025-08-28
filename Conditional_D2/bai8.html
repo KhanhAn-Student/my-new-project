@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let number = parseInt(prompt("Nhập vào 1 số nguyên:"));
+        if (number < 0 || number > 120 || isNaN(number)) {
+            document.write("Số không hợp lệ. Vui lòng nhập lại một số nguyên từ 0 đến 120.");
+        }
+        else if (number < 10) {
+            document.write("Bạn là trẻ em.");
+        }
+        else if (number >= 10 && number < 18) {
+            document.write("Bạn là thanh thiếu niên.");
+        }
+        else if (number >= 18 && number < 30) {
+            document.write("Bạn là người trưởng thành.");
+        }
+        else if(number >= 30 && number < 60) {
+            document.write("Bạn là người trung niên.");
+        }
+        else if (number >= 60 && number < 120) {
+            document.write("Bạn là người cao tuổi.");
+        }
+        
+    </script>
+</body>
+</html> 

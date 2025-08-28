@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Document</title>
+</head>
+<body>
+    <script>
+        let a = parseFloat(prompt("Nhập tổng số điện tiêu thụ:"));
+        let total = 0;
+        if (a >= 0 && a < 50) {
+            total = a * 1984;
+        }
+        else if (a >= 50 && a < 100) {
+            total = 50 * 1984 + (a - 50) * 2050;
+        }
+        else if (a >= 100 && a < 150) {
+            total = 50 * 1984 + 50 * 2050 + (a - 100) * 2380;
+        }
+        else if (a >= 150 && a < 200) {
+            total = 50 * 1984 + 50 * 2050 + 50 * 2380 + (a - 150) * 2500;
+        }
+        else if (a >= 200 && a < 300) {
+            total = 50 * 1984 + 50 * 2050 + 50 * 2380 + 50 * 2500 + (a - 200) * 2700;
+        }
+        else if (a >= 300) {
+            total = 50 * 1984 + 50 * 2050 + 50 * 2380 + 50 * 2500 + 100 * 2700 + (a - 300) * 3000;
+        }
+        else {
+            document.write("Số điện tiêu thụ không hợp lệ.");
+        }
+
+        if (a >= 0) {
+            let vat = total * 0.1;
+            let totalWithVAT = total + vat;
+            document.write("Số tiền điện tiêu thụ (chưa VAT): " + total.toLocaleString() + " đồng.<br>");
+            document.write("VAT (10%): " + vat.toLocaleString() + " đồng.<br>");
+            document.write("Tổng tiền phải trả (đã gồm VAT): " + totalWithVAT.toLocaleString() + " đồng.");
+        }
+    </script>
+</body>
+</html>
